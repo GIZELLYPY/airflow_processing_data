@@ -1,0 +1,53 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:13  
+    environment:
+      POSTGRES_DB: airflow
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  spark-master:
+    image: bitnami/spark:latest
+    ports:
+      - "7077:7077"
+      - "8081:8080"
+    environment:
+      - SPARK_MODE=master
+      - JAVA_HOME=/opt/bitnami/java
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_MASTER_URL=spark://spark-master:7077
+
+
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+      - PYTHONPATH=/home/airflow/.local/lib/python3.8/site-packages:$PYTHONPATH
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      - AIRFLOW__WEBSERVER__RBAC=True
+      - AIRFLOW_UID=50000
+      - AIRFLOW_VAR_DATA_OUTPUT=/output/
+    depends_on:
+      - postgres
+    volumes:
+      - ./src:/opt/airflow/dags
+      - ./output:/opt/airflow/output
+      - ./input:/opt/airflow/input
+    ports:
+      - "8080:8080"
+
+volumes:
+  airflow_data:
+  postgres_data:

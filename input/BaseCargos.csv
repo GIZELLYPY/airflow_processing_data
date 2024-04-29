@@ -1,0 +1,26 @@
+﻿Cargo;Nível;Área;COD Área;COD Nível;Quadro;Bonus;Contratacao
+OPV;Diretor;Operações;   JAJ;JE;Efetivo;S;Diretoria
+LOI;Estagiário;Logísitca;EDE;JA;Efetivo;N;Gerente
+ADI;Estagiário;Administrativo;BAC;JA;Efetivo;N;Gerente
+ADII;Analista;Administrativo;BAC;DB;Terceiro;N;RH
+OPII;Analista;Operações;JAJ;DB;Terceiro;N;RH
+FIV;Diretor;Financeiro;CBB;   JE;Efetivo;S;Diretoria
+FIII;Analista;Financeiro;CBB;DB;Terceiro;N;RH
+ADIII;Coordenador;Administrativo;BAC;DB;Terceiro;N;RH
+LOIV;;Gerente;Logísitca;EDE;ID;Efetivo;S;Diretoria
+FII;Estagiário;Financeiro;CBB;JA;Efetivo;N;Gerente
+LOIII;Coordenador;Logísitca;   EDE;DB;Terceiro;N;RH
+COIII;;Coordenador;Comercial;JAA;DB;Terceiro;N;RH
+COIV;Gerente;Comercial;JAA;ID;Efetivo;S;Diretoria
+ADV;Diretor;Administrativo;BAC;JE;Efetivo;S;Diretoria
+FIIII;Coordenador;Financeiro;CBB;DB;Terceiro;N;RH
+LOII;Analista;Logísitca;EDE;DB;Terceiro;N;RH
+OPIV;Gerente;Operações;JAJ;ID;Efetivo;S;RH
+COII;;Analista;Comercial;JAA;DB;Terceiro;N;RH
+OPI;Estagiário;@@@Operações;JAJ;JA;Efetivo;N;Gerente
+COI;Estagiário;Comercial;JAA;JA;Efetivo;N;Gerente
+OPIII;Coordenador;Operações;JAJ;DB;Terceiro;N;RH
+ADIV;;Gerente;Administrativo;BAC;ID;Efetivo;S;RH
+FIIV;;Gerente;Financeiro;CBB;ID;Efetivo;S;Diretoria
+LOV;Diretor;Logísitca;EDE;JE;Efetivo;S;Diretoria
+COV;Diretor;Comercial;JAA;JE;Efetivo;S;Diretoria
